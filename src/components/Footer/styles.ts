@@ -5,7 +5,6 @@ export const FooterContainer = styled.footer`
   color: ${(props) => props.theme?.textColor};
   padding: 10px;
   border-top: 1px solid ${(props) => props.theme?.textColor};
-  position: fixed;
   bottom: 0;
   width: 100%;
 `;

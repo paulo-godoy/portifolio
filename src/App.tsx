@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { AppWrapper } from "styles";
 import Header from "./components/Header";
-import { darkTheme, lightTheme, ThemeProps } from "./theme";
+import { darkTheme, lightTheme } from "./theme";
 import {
   FaMobileAlt,
   FaEnvelope,
@@ -13,6 +14,8 @@ import {
   FaWhatsappSquare,
 } from "react-icons/fa";
 import Footer from "components/Footer";
+import About from "components/About";
+import Home from "./components/Home";
 
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -21,7 +24,7 @@ const App = () => {
     setIsDarkMode(!isDarkMode);
   };
 
-  const currentTheme: ThemeProps = isDarkMode ? darkTheme : lightTheme;
+  const currentTheme = isDarkMode ? darkTheme : lightTheme;
 
   const contactInfo = [
     { icon: <FaMobileAlt />, text: "51-985862294" },
@@ -50,6 +53,12 @@ const App = () => {
           isDarkMode={isDarkMode}
           toggleTheme={toggleTheme}
         />
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </BrowserRouter>
         <Footer
           isDarkMode={isDarkMode}
           toggleTheme={toggleTheme}

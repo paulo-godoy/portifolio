@@ -26,8 +26,8 @@ const Header: React.FC<HeaderProps> = ({
   title,
 }) => {
   const menuItems = [
-    { label: "Home", link: "#" },
-    { label: "Sobre", link: "#" },
+    { label: "Home", link: "/" },
+    { label: "Sobre", link: "/about" },
     { label: "Contato", link: "#" },
   ];
 
@@ -38,6 +38,7 @@ const Header: React.FC<HeaderProps> = ({
         alt="Logo do perfil"
       />
       <Title>{title}</Title>
+
       <ToggleButton onClick={toggleTheme}>
         {isDarkMode ? (
           <FiSun color={theme?.textColor} />
