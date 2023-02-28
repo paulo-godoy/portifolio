@@ -5,7 +5,7 @@ import {
   ContactContainer,
   ContactItem,
   SocialMediaContainer,
-  SocialMediaLink,
+  SocialMedia,
 } from "./styles";
 
 type ContactInfo = {
@@ -53,9 +53,9 @@ const Footer: React.FC<FooterProps> = ({
       <SocialMediaContainer>
         <ul>
           {socialMediaLinks.map((link, index) => (
-            <SocialMediaLink key={index} href={link.url} target="_blank">
+            <SocialMedia key={index} href={link.url} target="_blank">
               {link.icon}
-            </SocialMediaLink>
+            </SocialMedia>
           ))}
         </ul>
       </SocialMediaContainer>

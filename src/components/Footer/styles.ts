@@ -35,7 +35,7 @@ export const SocialMediaContainer = styled.div`
   }
 `;
 
-export const SocialMediaLink = styled.a`
+export const SocialMedia = styled.a`
   display: inline-block;
   width: 40px;
   height: 40px;
