@@ -14,8 +14,9 @@ import {
   FaWhatsappSquare,
 } from "react-icons/fa";
 import Footer from "components/Footer";
-import About from "components/About";
-import Home from "./components/Home";
+import About from "pages/About";
+import Home from "./pages/HomePage";
+import CentralizedAndSideBySide from "components/Centralized";
 
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -53,12 +54,14 @@ const App = () => {
           isDarkMode={isDarkMode}
           toggleTheme={toggleTheme}
         />
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-          </Routes>
-        </BrowserRouter>
+        <CentralizedAndSideBySide>
+          <BrowserRouter basename={process.env.PUBLIC_URL}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+            </Routes>
+          </BrowserRouter>
+        </CentralizedAndSideBySide>
         <Footer
           isDarkMode={isDarkMode}
           toggleTheme={toggleTheme}

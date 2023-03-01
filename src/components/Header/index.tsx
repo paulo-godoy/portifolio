@@ -9,6 +9,7 @@ import {
 } from "./styles";
 import { ThemeProps } from "./../../theme";
 import { FiSun, FiMoon } from "react-icons/fi";
+import { FaReact } from "react-icons/fa";
 
 interface HeaderProps {
   isDarkMode: boolean;
@@ -28,15 +29,16 @@ const Header: React.FC<HeaderProps> = ({
   const menuItems = [
     { label: "Home", link: "/" },
     { label: "Sobre", link: "/about" },
-    { label: "Contato", link: "#" },
+    { label: "Currículo", link: "#" },
   ];
 
   return (
     <LogoContainer background-color={backgroundColor} color={theme?.textColor}>
-      <LogoImage
+      {/* <LogoImage
         src={process.env.PUBLIC_URL + "imagens/perfil.jpeg"}
         alt="Logo do perfil"
-      />
+      /> */}
+      <FaReact size={30} />
       <Title>{title}</Title>
 
       <ToggleButton onClick={toggleTheme}>
