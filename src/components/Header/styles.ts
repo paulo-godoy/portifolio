@@ -5,6 +5,7 @@ export const LogoContainer = styled.div`
   color: ${(props) => props.theme?.textColor};
   display: flex;
   align-items: center;
+  height: 4rem;
   justify-content: space-between;
   padding: 1rem;
   position: sticky;

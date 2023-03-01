@@ -31,7 +31,7 @@ export const HomeContainer = styled.div`
 
 export const ProjectCard = styled.div`
   width: 300px;
-  height: 400px;
+  height: auto;
   border-radius: 8px;
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -69,7 +69,7 @@ export const ProjectDescription = styled.p`
 
 export const ProjectLinksContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 20px;
 
@@ -86,6 +86,8 @@ export const ProjectLink = styled.a`
   padding: 10px 20px;
   border-radius: 8px;
   text-decoration: none;
+  text-align: center;
+  width: 100%;
   font-size: 16px;
   transition: all 0.3s ease;
 
