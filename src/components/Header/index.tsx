@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   LogoContainer,
   MenuItem,
@@ -33,10 +34,6 @@ const Header: React.FC<HeaderProps> = ({
 
   return (
     <LogoContainer background-color={backgroundColor} color={theme?.textColor}>
-      {/* <LogoImage
-        src={process.env.PUBLIC_URL + "imagens/perfil.jpeg"}
-        alt="Logo do perfil"
-      /> */}
       <FaReact size={30} />
       <Title>{title}</Title>
 
