@@ -1,67 +1,94 @@
 import styled from "styled-components";
 
-export const LogoContainer = styled.div`
-  background-color: ${(props) => props.theme?.backgroundColor};
-  color: ${(props) => props.theme?.textColor};
+interface HeaderProps {
+  backgroundColor?: string;
+  open?: boolean; // adicionando a propriedade open ao HeaderProps
+}
+
+export const LogoContainer = styled.header<HeaderProps>`
   display: flex;
   align-items: center;
-  height: 4rem;
   justify-content: space-between;
   padding: 1rem;
-  position: sticky;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 9999;
+  background-color: ${(props) => props.backgroundColor};
   border-bottom: 1px solid ${(props) => props.theme?.textColor};
-`;
-
-export const LogoImage = styled.img`
-  height: 3rem;
-  width: 3rem;
-  border-radius: 50%;
-  margin-right: 1rem;
 `;
 
 export const Title = styled.h1`
   font-size: 1.5rem;
-  margin: 0;
+  margin-left: 0.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  letter-spacing: 1px;
 `;
 
 export const ToggleButton = styled.button`
+  display: block;
   background-color: transparent;
-  color: ${(props) => props.theme?.textColor};
   border: none;
-  font-size: 1rem;
   cursor: pointer;
+  color: ${(props) => props.theme?.textColor};
+  font-size: 1.2rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: color 0.3s ease-in-out;
 
   &:hover {
-    text-decoration: underline;
+    color: ${(props) => props.theme?.primaryColor};
+  }
+
+  &:focus {
+    outline: none;
   }
 `;
 
-export const MenuItems = styled.ul`
+export const MenuItems = styled.ul<HeaderProps>`
   display: flex;
   list-style: none;
   margin: 0;
-  padding: 0;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    position: absolute;
+    top: 4rem;
+    right: 0;
+    background-color: ${(props) => props.theme?.backgroundColor};
+    height: ${(props) =>
+      props.open
+        ? "calc(100vh - 4rem)"
+        : "0"}; // utilizando a propriedade open para definir o estilo
+    overflow: hidden;
+    transition: height 0.3s ease-in-out;
+  }
 `;
 
 export const MenuItem = styled.li`
   margin-left: 1rem;
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: 1.2rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: color 0.3s ease-in-out;
+
+  @media (max-width: 768px) {
+    margin: 0;
+    padding: 1rem;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid ${(props) => props.theme?.textColor};
+  }
 
   a {
-    color: ${(props) => props.theme?.textColor};
     text-decoration: none;
-    padding: 0.5rem;
-    transition: all 0.3s ease-in-out;
+    color: ${(props) => props.theme?.textColor};
 
     &:hover {
-      color: ${(props) => props.theme?.backgroundColor};
-      background-color: ${(props) => props.theme?.textColor};
-      border-radius: 0.5rem;
+      color: ${(props) => props.theme?.primaryColor};
+    }
+
+    &:focus {
+      outline: none;
     }
   }
 `;

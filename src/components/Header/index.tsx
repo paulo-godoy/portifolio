@@ -1,14 +1,16 @@
-import React from "react";
-import {
-  LogoContainer,
-  MenuItem,
-  MenuItems,
-  Title,
-  ToggleButton,
-} from "./styles";
-import { ThemeProps } from "./../../theme";
+import { useState } from "react";
+import { FaBars } from "react-icons/fa";
+import { useMediaQuery } from "react-responsive";
 import { FiSun, FiMoon } from "react-icons/fi";
 import { FaReact } from "react-icons/fa";
+import {
+  LogoContainer,
+  Title,
+  ToggleButton,
+  MenuItems,
+  MenuItem,
+} from "./styles";
+import { ThemeProps } from "./../../theme";
 
 interface HeaderProps {
   isDarkMode: boolean;
@@ -25,11 +27,18 @@ const Header: React.FC<HeaderProps> = ({
   backgroundColor,
   title,
 }) => {
+  const [showMenu, setShowMenu] = useState(false);
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+
   const menuItems = [
     { label: "Home", link: "/" },
     { label: "Sobre", link: "/about" },
     { label: "Currículo", link: "#" },
   ];
+
+  const handleMenuClick = () => {
+    setShowMenu(!showMenu);
+  };
 
   return (
     <LogoContainer background-color={backgroundColor} color={theme?.textColor}>
@@ -44,13 +53,31 @@ const Header: React.FC<HeaderProps> = ({
         )}
       </ToggleButton>
 
-      <MenuItems>
-        {menuItems.map((item) => (
-          <MenuItem key={item.label}>
-            <a href={item.link}>{item.label}</a>
-          </MenuItem>
-        ))}
-      </MenuItems>
+      {isMobile && (
+        <ToggleButton onClick={handleMenuClick}>
+          <FaBars color={theme?.textColor} />
+        </ToggleButton>
+      )}
+
+      {!isMobile && (
+        <MenuItems>
+          {menuItems.map((item) => (
+            <MenuItem key={item.label}>
+              <a href={item.link}>{item.label}</a>
+            </MenuItem>
+          ))}
+        </MenuItems>
+      )}
+
+      {isMobile && showMenu && (
+        <MenuItems open={showMenu}>
+          {menuItems.map((item) => (
+            <MenuItem key={item.label}>
+              <a href={item.link}>{item.label}</a>
+            </MenuItem>
+          ))}
+        </MenuItems>
+      )}
     </LogoContainer>
   );
 };
