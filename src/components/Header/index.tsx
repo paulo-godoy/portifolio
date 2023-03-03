@@ -33,7 +33,7 @@ const Header: React.FC<HeaderProps> = ({
   const menuItems = [
     { label: "Home", link: "/" },
     { label: "Sobre", link: "/about" },
-    { label: "Currículo", link: "#" },
+    { label: "Currículo", link: "/imagens/curriculo/Resume.pdf" },
   ];
 
   const handleMenuClick = () => {
