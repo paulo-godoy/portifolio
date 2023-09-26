@@ -1,108 +1,53 @@
 import styled from "styled-components";
 
-export const HomeContainer = styled.div`
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: auto;
-  margin: 40px 0;
-
-  h1 {
-    font-size: 36px;
-    margin-bottom: 40px;
-  }
-
-  .projects-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 40px;
-    max-width: 1200px;
-
-    @media (max-width: 768px) {
-      flex-direction: column;
-      align-items: center;
-      max-width: unset;
-    }
-  }
+  padding: 50px 0;
+  background-color: transparent;
 `;
 
-export const ProjectCard = styled.div`
-  width: 300px;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: all 0.3s ease;
-  margin: 8px;
-  background-color: #5d92b1;
-
-  &:hover {
-    transform: translateY(-5px);
-  }
-
-  @media (max-width: 768px) {
-    width: 100%;
-    height: auto;
-    margin-bottom: 40px;
-  }
-`;
-
-export const ProjectImage = styled.img`
-  width: 100%;
+export const Image = styled.img`
+  width: 200px;
   height: 200px;
+  border-radius: 50%;
   object-fit: cover;
 `;
 
-export const ProjectTitle = styled.h3`
-  font-size: 24px;
-  font-weight: 600;
-  margin: 20px;
+export const Title = styled.h1`
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 20px;
 `;
 
-export const ProjectDescription = styled.p`
-  font-size: 18px;
-  margin: 0 20px 20px 20px;
+export const Subtitle = styled.h2`
+  font-size: 20px;
+  font-weight: normal;
+  margin-top: 10px;
 `;
 
-export const ProjectLinksContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-`;
-
-export const ProjectLink = styled.a`
-  display: inline-block;
-  background-color: #8ab6d6;
-  color: ${(props) => props.theme?.textColor};
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
-  text-align: center;
-  width: 100%;
+export const Text = styled.p`
   font-size: 16px;
-  transition: all 0.3s ease;
+  line-height: 1.5;
+  margin-top: 20px;
+  text-align: center;
+`;
+
+export const Button = styled.a`
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: ${(props) => props.theme?.textColor};
+  background-color: #5d92b1;
+  border-radius: 5px;
+  margin-top: 30px;
+  transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: #3e6d8e;
+    background-color: #3b637a;
   }
-
-  @media (max-width: 768px) {
-    margin-bottom: 10px;
-  }
-`;
-
-export const WrapperContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  background-color: transparent;
 `;

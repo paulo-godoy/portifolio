@@ -13,10 +13,10 @@ import {
   FaGithubSquare,
   FaWhatsappSquare,
 } from "react-icons/fa";
-import Footer from "components/Footer";
-import About from "pages/About";
+import Footer from "./components/Footer";
+import Courses from "./pages/Courses";
 import Home from "./pages/HomePage";
-import CentralizedAndSideBySide from "components/Centralized";
+import CentralizedAndSideBySide from "./components/Centralized";
 
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -55,12 +55,14 @@ const App = () => {
           toggleTheme={toggleTheme}
         />
         <CentralizedAndSideBySide>
-          <BrowserRouter basename={process.env.PUBLIC_URL}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-            </Routes>
-          </BrowserRouter>
+          <div>
+            <BrowserRouter basename={process.env.PUBLIC_URL}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/courses" element={<Courses />} />
+              </Routes>
+            </BrowserRouter>
+          </div>
         </CentralizedAndSideBySide>
         <Footer
           isDarkMode={isDarkMode}
