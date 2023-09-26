@@ -63,9 +63,7 @@ const Header: React.FC<HeaderProps> = ({
         <MenuItems>
           {menuItems.map((item) => (
             <MenuItem key={item.label}>
-              <a target="_blank" href={item.link} rel="noreferrer">
-                {item.label}
-              </a>
+              <a href={item.link}>{item.label}</a>
             </MenuItem>
           ))}
         </MenuItems>
