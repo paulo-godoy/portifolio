@@ -11,7 +11,6 @@ import {
   MenuItem,
 } from "./styles";
 import { ThemeProps } from "./../../theme";
-import SearchComponent from "components/SearchComponent";
 
 interface HeaderProps {
   isDarkMode: boolean;
