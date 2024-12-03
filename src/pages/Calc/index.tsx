@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { evaluate } from "mathjs";
 import {
   Button,
   ButtonRow,
@@ -28,7 +29,7 @@ function CalculatorApp() {
         setInputValue((prevValue) => prevValue + value);
       } else if (value === "=") {
         try {
-          const result = eval(inputValue);
+          const result = evaluate(inputValue); // Uso do mathjs
           setInputValue(result.toString());
         } catch (error) {
           setInputValue("Error");
