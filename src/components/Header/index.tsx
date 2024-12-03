@@ -11,6 +11,7 @@ import {
   MenuItem,
 } from "./styles";
 import { ThemeProps } from "./../../theme";
+import SearchComponent from "components/SearchComponent";
 
 interface HeaderProps {
   isDarkMode: boolean;
@@ -33,6 +34,7 @@ const Header: React.FC<HeaderProps> = ({
   const menuItems = [
     { label: "Home", link: "/" },
     { label: "Cursos", link: "/courses" },
+    { label: "Projetos", link: "/projects" },
     { label: "Currículo", link: "/imagens/curriculo/paulo_CV_863.pdf" },
   ];
 

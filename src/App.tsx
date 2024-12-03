@@ -15,6 +15,7 @@ import {
 } from "react-icons/fa";
 import Footer from "./components/Footer";
 import Courses from "./pages/Courses";
+import Projects from "./pages/Projects";
 import Home from "./pages/HomePage";
 import CentralizedAndSideBySide from "./components/Centralized";
 
@@ -60,6 +61,7 @@ const App = () => {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/courses" element={<Courses />} />
+                <Route path="/projects" element={<Projects />} />
               </Routes>
             </BrowserRouter>
           </div>
